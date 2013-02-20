@@ -16,7 +16,7 @@ This project uses OpenCV 2.4 and gPhoto 2.5 and runs on Linux. The GUI uses QT4.
 Tested cameras: Logitech C920 HD webcam, Nikon D300 and Canon EOS 5D Mark II.
 
 # Documentation #
-[See the PDF](https://github.com/JohannesBiermann/NegativeViewer/blob/master/documentation/2013-NegativeViewer-Documentation.pdf) (only in German).
+[See the PDF](https://raw.github.com/JohannesBiermann/NegativeViewer/master/documentation/2013-NegativeViewer-Documentation.pdf) (only in German).
 
 # Construction and Software #
 The construction consists of a light box and a repro tripod.
@@ -32,7 +32,7 @@ Screenshot of the application
 You can download a complete VMware image with everything preinstalled including development environment [here](http://johannesb.eu/files/NegativeViewerVMWareImage.zip) (Lubuntu 12.10, 64 Bit, 1,14 GB download size).
 Please connect the webcam or DSLR into VMware.
 
-![](https://raw.github.com/JohannesBiermann/NegativeViewer/master/documentation/img/vmdevice.png)
+![vmdevice](https://raw.github.com/JohannesBiermann/NegativeViewer/master/documentation/img/vmdevice.png)
 Connect camera to VMware
 
 # Install #
