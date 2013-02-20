@@ -1,0 +1,9 @@
+Please see documentation for details.
+
+You need OpenCV 2.4.x, GPhoto 2.5.x including development packages and also QT4 SDK (4.8) packages. 
+
+To compile it, use QT Creator and open the project file or on command line
+
+just simply execute
+
+make

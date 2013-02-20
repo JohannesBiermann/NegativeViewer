@@ -1,0 +1,23 @@
+<RCC>
+    <qresource prefix="/appimages">
+        <file>led-icons/color_swatch_1.png</file>
+        <file>led-icons/color_swatch_2.png</file>
+        <file>led-icons/contrast.png</file>
+        <file>led-icons/control_play.png</file>
+        <file>led-icons/control_pause.png</file>
+        <file>led-icons/color_swatch_2_grey.png</file>
+        <file>led-icons/invert.png</file>
+        <file>led-icons/invert_i.png</file>
+        <file>led-icons/ruler_crop.png</file>
+        <file>led-icons/drive_disk.png</file>
+        <file>led-icons/shape_flip_vertical.png</file>
+        <file>led-icons/shape_flip_vertical_r.png</file>
+        <file>led-icons/stamp.png</file>
+        <file>led-icons/stamp_s.png</file>
+        <file>led-icons/photo.png</file>
+        <file>led-icons/eye.png</file>
+        <file>led-icons/doc_resize.png</file>
+        <file>led-icons/doc_resize_actual.png</file>
+        <file>splash.png</file>
+    </qresource>
+</RCC>
