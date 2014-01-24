@@ -50,7 +50,6 @@ LIBS += -L/usr/local/lib \
     -lopencv_imgproc \
     -lopencv_legacy \
     -lopencv_ml \
-    -lopencv_nonfree \
     -lopencv_objdetect \
     -lopencv_photo \
     -lopencv_stitching \
