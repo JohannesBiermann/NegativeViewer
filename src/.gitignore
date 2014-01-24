@@ -1,0 +1,5 @@
+*.o
+QTNegativeViewer
+moc_dialog.cpp
+qrc_qtressource.cpp
+ui_dialog.h
