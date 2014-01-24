@@ -7,3 +7,12 @@ To compile it, use QT Creator and open the project file or on command line
 just simply execute
 
 make
+
+=====
+
+To install the dependencies on Ubuntu / Debian / Mint run:
+
+sudo apt-get install qtcreator ocl-icd-libopencl1 \
+    libopencv-dev libgphoto2-6-dev qt-sdk
+
+The package ocl-icd-libopencl1 is added due to a packaging bug: https://bugs.launchpad.net/ubuntu/+source/opencv/+bug/1245260
