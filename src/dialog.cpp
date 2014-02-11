@@ -448,6 +448,12 @@ void Dialog::on_sldrCropThreshold_sliderMoved(int position)
 }
 
 
+void Dialog::on_rotateBox_valueChanged(int angle)
+{
+    videoProcessing.setRotateAngle((double)angle);
+    updateFrameIfNecessary();
+}
+
 void Dialog::on_btnTakePhoto_clicked()
 {
     ui->btnTakePhoto->setDisabled(true);
