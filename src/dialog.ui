@@ -94,6 +94,26 @@
        </widget>
       </item>
       <item>
+       <widget class="QToolButton" name="btnFitToScreen">
+        <property name="styleSheet">
+         <string notr="true">width:100%;</string>
+        </property>
+        <property name="text">
+         <string>Screen fit</string>
+        </property>
+        <property name="icon">
+         <iconset resource="qtressource.qrc">
+          <normaloff>:/appimages/led-icons/doc_resize_actual.png</normaloff>:/appimages/led-icons/doc_resize_actual.png</iconset>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="toolButtonStyle">
+         <enum>Qt::ToolButtonTextBesideIcon</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
        <widget class="QToolButton" name="btnInvert">
         <property name="styleSheet">
          <string notr="true">width: 100%;</string>
@@ -479,26 +499,6 @@
            </widget>
           </item>
           <item>
-           <widget class="QToolButton" name="btnFitToScreen">
-            <property name="styleSheet">
-             <string notr="true">width:100%;</string>
-            </property>
-            <property name="text">
-             <string>Screen fit</string>
-            </property>
-            <property name="icon">
-             <iconset resource="qtressource.qrc">
-              <normaloff>:/appimages/led-icons/doc_resize_actual.png</normaloff>:/appimages/led-icons/doc_resize_actual.png</iconset>
-            </property>
-            <property name="checkable">
-             <bool>true</bool>
-            </property>
-            <property name="toolButtonStyle">
-             <enum>Qt::ToolButtonTextBesideIcon</enum>
-            </property>
-           </widget>
-          </item>
-          <item>
            <spacer name="bottomSpacer">
             <property name="orientation">
              <enum>Qt::Vertical</enum>
@@ -571,7 +571,16 @@
        <property name="spacing">
         <number>0</number>
        </property>
-       <property name="margin">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
         <number>0</number>
        </property>
        <item>
