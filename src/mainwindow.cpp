@@ -24,8 +24,8 @@
 * along with NegativeViewer. If not, see <http://www.gnu.org/licenses/>. *
 **************************************************************************/
 
-#include "dialog.h"
-#include "ui_dialog.h"
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
 #include "MatToQImage.h"
 
 #include <QtCore>
@@ -34,7 +34,7 @@
 #include <QMessageBox>
 #include <QDir>
 
-Dialog::Dialog(QWidget *parent, int cameratype) : QDialog(parent), ui(new Ui::Dialog)
+MainWindow::MainWindow(QWidget *parent, int cameratype) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
 
     ui->setupUi(this);
@@ -89,7 +89,7 @@ Dialog::Dialog(QWidget *parent, int cameratype) : QDialog(parent), ui(new Ui::Di
 }
 
 // Configure UI depending on camera type
-void Dialog::setupUIWebcam()
+void MainWindow::setupUIWebcam()
 {
     ui->dslr->hide();
     ui->toolbox->setCurrentIndex(0);
@@ -98,7 +98,7 @@ void Dialog::setupUIWebcam()
     ui->chkCropWhite->hide();
 }
 
-void Dialog::setupUIDSLR()
+void MainWindow::setupUIDSLR()
 {
     ui->webcam->hide();
     ui->toolbox->setCurrentIndex(1);
@@ -107,7 +107,7 @@ void Dialog::setupUIDSLR()
 
 ///////////////////////////////////
 // Destructor, called on application quit, releases any open resources to the camera
-Dialog::~Dialog()
+MainWindow::~MainWindow()
 {
     delete ui;
     switch (this->cameraType)
@@ -122,13 +122,13 @@ Dialog::~Dialog()
     }
 }
 
-void Dialog::startCapture()
+void MainWindow::startCapture()
 {
     if (false == tmrTimer->isActive())
         tmrTimer->start(20);
 }
 
-void Dialog::stopCapture()
+void MainWindow::stopCapture()
 {
     if (true == tmrTimer->isActive())
         tmrTimer->stop();
@@ -137,7 +137,7 @@ void Dialog::stopCapture()
 ////////////////////////////////////
 
 
-void Dialog::processFrameAndUpdateGUI() {
+void MainWindow::processFrameAndUpdateGUI() {
     //capWebCam.read(cvmCurrentFrame);
 
     switch (this->cameraType)
@@ -191,7 +191,7 @@ void Dialog::processFrameAndUpdateGUI() {
 
 }
 
-void Dialog::updateFrameIfNecessary()
+void MainWindow::updateFrameIfNecessary()
 {
     // use two ifs to speed up calls
     if (cameraType == CAMERA_DSLR) {
@@ -201,7 +201,7 @@ void Dialog::updateFrameIfNecessary()
     }
 }
 
-void Dialog::resizeEvent(QResizeEvent *event)
+void MainWindow::resizeEvent(QResizeEvent *event)
 {
     if (resizeFrame == true) {
         updateFrameIfNecessary();
@@ -210,7 +210,7 @@ void Dialog::resizeEvent(QResizeEvent *event)
 
 
 ///////////////////////////////////////////
-void Dialog::on_btnPauseOrResume_clicked()
+void MainWindow::on_btnPauseOrResume_clicked()
 {
     if (tmrTimer->isActive() == true) {
         stopCapture();
@@ -228,7 +228,7 @@ void Dialog::on_btnPauseOrResume_clicked()
     }
 }
 
-void Dialog::on_btnInvert_clicked()
+void MainWindow::on_btnInvert_clicked()
 {
     if(videoProcessing.isPicInvert() == false) {
         videoProcessing.setPicInvert(true);
@@ -243,7 +243,7 @@ void Dialog::on_btnInvert_clicked()
     updateFrameIfNecessary();
 }
 
-void Dialog::on_btnFlip_clicked()
+void MainWindow::on_btnFlip_clicked()
 {
     if(videoProcessing.isPicFlip() == false) {
         videoProcessing.setPicFlip(true);
@@ -257,7 +257,7 @@ void Dialog::on_btnFlip_clicked()
 }
 
 
-void Dialog::on_btnSave_clicked()
+void MainWindow::on_btnSave_clicked()
 {
 
     //QImage qCaptureImg((uchar*)cvmCurrentFrame.data, cvmCurrentFrame.cols, cvmCurrentFrame.rows, cvmCurrentFrame.step, QImage::Format_Indexed8);
@@ -302,7 +302,7 @@ void Dialog::on_btnSave_clicked()
 }
 
 
-void Dialog::on_chkGreyscale_clicked()
+void MainWindow::on_chkGreyscale_clicked()
 {
     if (ui->chkGreyscale->isChecked()) {
         videoProcessing.setPicGreyscale(true);
@@ -312,7 +312,7 @@ void Dialog::on_chkGreyscale_clicked()
     updateFrameIfNecessary();
 }
 
-void Dialog::on_selectCamResolution_currentIndexChanged(int index)
+void MainWindow::on_selectCamResolution_currentIndexChanged(int index)
 {
     int width = 0;
     int height = 0;
@@ -338,13 +338,13 @@ void Dialog::on_selectCamResolution_currentIndexChanged(int index)
         // change UI size on success
         //ui->frame->setFixedWidth(width);
         //ui->frame->setFixedHeight(height);
-        //ui->Dialog->activate();
+        //ui->MainWindow->activate();
         resize(width+200, height+50);
     }
 
 }
 
-void Dialog::on_camIndex_valueChanged(int index)
+void MainWindow::on_camIndex_valueChanged(int index)
 {
     bool ret = this->webcam.switchCamera(index);
 
@@ -362,7 +362,7 @@ void Dialog::on_camIndex_valueChanged(int index)
     }
 }
 
-void Dialog::on_chkAutoFocus_clicked(bool checked)
+void MainWindow::on_chkAutoFocus_clicked(bool checked)
 {
     bool ret = false;
     if (checked == false) {
@@ -384,7 +384,7 @@ void Dialog::on_chkAutoFocus_clicked(bool checked)
 
 }
 
-void Dialog::on_sldrFocus_sliderMoved(int position)
+void MainWindow::on_sldrFocus_sliderMoved(int position)
 {
     float pos = position / 100.0;
 
@@ -402,7 +402,7 @@ void Dialog::on_sldrFocus_sliderMoved(int position)
 
 }
 
-void Dialog::on_chkSharpen_clicked()
+void MainWindow::on_chkSharpen_clicked()
 {
     if (ui->chkSharpen->isChecked()) {
         videoProcessing.setPicSharpen(true);
@@ -414,7 +414,7 @@ void Dialog::on_chkSharpen_clicked()
     updateFrameIfNecessary();
 }
 
-void Dialog::on_chkEqualize_clicked()
+void MainWindow::on_chkEqualize_clicked()
 {
     if (ui->chkEqualize->isChecked()) {
         videoProcessing.setPicEqualize(true);
@@ -424,7 +424,7 @@ void Dialog::on_chkEqualize_clicked()
     updateFrameIfNecessary();
 }
 
-void Dialog::on_chkCrop_clicked()
+void MainWindow::on_chkCrop_clicked()
 {
     if (ui->chkCrop->isChecked()) {
         ui->chkCropWhite->show();
@@ -441,20 +441,20 @@ void Dialog::on_chkCrop_clicked()
 }
 
 
-void Dialog::on_sldrCropThreshold_sliderMoved(int position)
+void MainWindow::on_sldrCropThreshold_sliderMoved(int position)
 {
     videoProcessing.setPicCropThreshold(position);
     updateFrameIfNecessary();
 }
 
 
-void Dialog::on_rotateBox_valueChanged(int angle)
+void MainWindow::on_rotateBox_valueChanged(int angle)
 {
     videoProcessing.setRotateAngle((double)angle);
     updateFrameIfNecessary();
 }
 
-void Dialog::on_btnTakePhoto_clicked()
+void MainWindow::on_btnTakePhoto_clicked()
 {
     ui->btnTakePhoto->setDisabled(true);
     stopCapture();
@@ -474,7 +474,7 @@ void Dialog::on_btnTakePhoto_clicked()
 
 }
 
-void Dialog::on_btnFitToScreen_clicked()
+void MainWindow::on_btnFitToScreen_clicked()
 {
     if (ui->btnFitToScreen->isChecked()) {
         resizeFrame = true;
@@ -484,7 +484,7 @@ void Dialog::on_btnFitToScreen_clicked()
    updateFrameIfNecessary();
 }
 
-void Dialog::on_btnAutofocus_clicked()
+void MainWindow::on_btnAutofocus_clicked()
 {
     ui->btnAutofocus->setDisabled(true);
     stopCapture();
@@ -503,7 +503,7 @@ void Dialog::on_btnAutofocus_clicked()
 
 }
 
-void Dialog::on_chkCropWhite_clicked(bool checked)
+void MainWindow::on_chkCropWhite_clicked(bool checked)
 {
     if (checked == true) {
         this->videoProcessing.setPicCropOnWhite(true);

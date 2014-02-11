@@ -24,10 +24,10 @@
 * along with NegativeViewer. If not, see <http://www.gnu.org/licenses/>. *
 **************************************************************************/
 
-#ifndef DIALOG_H
-#define DIALOG_H
+#ifndef MAINWINDOW_H
+#define MAINWINDOW_H
 
-#include <QDialog>
+#include <QMainWindow>
 #include <QLabel>
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
@@ -43,21 +43,21 @@ const int CAMERA_DSLR = 1;
 
 ////////////////////////////
 namespace Ui {
-class Dialog;
+class MainWindow;
 }
 ///////////////////////////
 
-class Dialog : public QDialog
+class MainWindow : public QMainWindow
 {
     Q_OBJECT
     
 public:
-    explicit Dialog(QWidget *parent = 0, int cameratype = 0);
-    ~Dialog();
+    explicit MainWindow(QWidget *parent = 0, int cameratype = 0);
+    ~MainWindow();
 
 
 private:
-    Ui::Dialog *ui;
+    Ui::MainWindow *ui;
 
     // camera libs
     WebCam webcam;
@@ -118,4 +118,4 @@ private slots:
 signals:
 };
 
-#endif // DIALOG_H
+#endif // MAINWINDOW_H
