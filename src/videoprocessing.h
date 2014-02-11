@@ -27,7 +27,6 @@
 #ifndef VIDEOPROCESSING_H
 #define VIDEOPROCESSING_H
 
-#include <QDialog>
 #include <opencv/cv.h>
 #include <opencv/highgui.h>
 
