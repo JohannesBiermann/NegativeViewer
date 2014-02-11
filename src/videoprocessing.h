@@ -44,12 +44,14 @@ private:
     bool picCrop;
     int picCropThreshold;
     bool picCropOnWhite;
+    double picRotateAngle; // angle in degrees, can be negative
 
     cv::Mat frame;
 
     void invertFrame();
     void convertFrame2Grey();
     void flipFrame();
+    void rotateFrame();
     void cropFrame();
     void sharpenFrame();
     void equalizeFrame();
@@ -92,6 +94,14 @@ public:
 
     void setPicFlip(bool picFlip) {
         this->picFlip = picFlip;
+    }
+
+    double rotateAngle() const {
+        return picRotateAngle;
+    }
+
+    void setRotateAngle(double angle) {
+        this->picRotateAngle = angle;
     }
 
     bool isPicGreyscale() const {

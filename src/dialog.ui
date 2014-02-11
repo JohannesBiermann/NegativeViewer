@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>906</width>
-    <height>718</height>
+    <height>728</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -200,6 +200,29 @@
        </widget>
       </item>
       <item>
+       <widget class="QLabel" name="lblRotate">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="text">
+         <string>Rotate</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSpinBox" name="rotateBox">
+        <property name="minimum">
+         <number>-360</number>
+        </property>
+        <property name="maximum">
+         <number>360</number>
+        </property>
+        <property name="singleStep">
+         <number>90</number>
+        </property>
+       </widget>
+      </item>
+      <item>
        <widget class="QToolButton" name="chkCrop">
         <property name="baseSize">
          <size>
@@ -303,7 +326,7 @@
          </size>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="webcam">
          <layout class="QVBoxLayout" name="verticalLayout">
@@ -558,7 +581,7 @@
         <x>0</x>
         <y>0</y>
         <width>740</width>
-        <height>698</height>
+        <height>708</height>
        </rect>
       </property>
       <property name="sizePolicy">

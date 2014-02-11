@@ -106,6 +106,7 @@ private slots:
     void on_chkEqualize_clicked();
     void on_chkCrop_clicked();
     void on_sldrCropThreshold_sliderMoved(int position);
+    void on_rotateBox_valueChanged(int angle);
 
     void on_chkAutoFocus_clicked(bool checked);
     void on_sldrFocus_sliderMoved(int position);

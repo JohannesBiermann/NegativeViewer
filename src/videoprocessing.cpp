@@ -172,6 +172,17 @@ void VideoProcessing::flipFrame() {
 }
 
 /*
+  rotates the picture by specified angle
+*/
+void VideoProcessing::rotateFrame() {
+    //ref: https://opencv-code.com/quick-tips/how-to-rotate-image-in-opencv/
+    int len = std::max(frame.cols, frame.rows);
+    cv::Point2f pt(len/2., len/2.);
+    cv::Mat r = cv::getRotationMatrix2D(pt, picRotateAngle, 1.0);
+    cv::warpAffine(frame, frame, r, cv::Size(len, len));
+}
+
+/*
    inverts the picture
 */
 void VideoProcessing::invertFrame() {
@@ -230,6 +241,10 @@ cv::Mat VideoProcessing::process(cv::Mat &frame) {
 
     if (picFlip == true) {
         flipFrame();
+    }
+
+    if (picRotateAngle != 0) {
+        rotateFrame();
     }
 
     if (picEqualize == true) {
