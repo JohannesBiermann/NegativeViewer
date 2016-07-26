@@ -29,7 +29,7 @@ Screenshot of the application
 
 
 # VMware Image #
-You can download a complete VMware image with everything preinstalled including development environment [here](http://johannesb.eu/files/NegativeViewerVMWareImage.zip) (Lubuntu 12.10, 64 Bit, 1,14 GB download size).
+You can download a complete VMware image with everything preinstalled including development environment [here](https://1drv.ms/u/s!AqvI3XcjuRuRgmmTkGUwVjFfz0zz) (Lubuntu 12.10, 64 Bit, 1,14 GB download size).
 Please connect the webcam or DSLR into VMware.
 
 ![vmdevice](https://raw.github.com/JohannesBiermann/NegativeViewer/master/documentation/img/vmdevice.png)
