@@ -30,7 +30,7 @@
 #include <cstring>
 
 
-DSLR::DSLR(Ui::Dialog *ui)
+DSLR::DSLR(Ui::MainWindow *ui)
 {
 
     this->ui = ui;

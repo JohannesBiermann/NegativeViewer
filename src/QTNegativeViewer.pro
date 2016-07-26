@@ -21,19 +21,19 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        dialog.cpp \
+        mainwindow.cpp \
     MatToQImage.cpp \
     videoprocessing.cpp \
     dslr.cpp \
     webcam.cpp
 
-HEADERS  += dialog.h \
+HEADERS  += mainwindow.h \
     MatToQImage.h \
     videoprocessing.h \
     dslr.h \
     webcam.h
 
-FORMS    += dialog.ui
+FORMS    += mainwindow.ui
 
 INCLUDEPATH += /usr/local/include/opencv \
                 /usr/include

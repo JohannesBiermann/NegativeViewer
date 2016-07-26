@@ -27,9 +27,9 @@
 #ifndef DSLR_H
 #define DSLR_H
 
-#include "ui_dialog.h"
+#include "ui_mainwindow.h"
 
-#include <QDialog>
+#include <QMainWindow>
 #include <QtCore>
 #include <QLabel>
 #include <QTextBrowser>
@@ -43,7 +43,7 @@
 class DSLR
 {
 public:
-    DSLR(Ui::Dialog *ui = 0);
+    DSLR(Ui::MainWindow *ui = 0);
 
     bool openCamera(void* ref);
 
@@ -67,7 +67,7 @@ public:
 
 private:
 
-    Ui::Dialog *ui;
+    Ui::MainWindow *ui;
 
     Camera *camera;
     GPContext *context;

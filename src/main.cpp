@@ -27,7 +27,7 @@
 #include <QMessageBox>
 #include <QSplashScreen>
 #include <QtGui/QApplication>
-#include "dialog.h"
+#include "mainwindow.h"
 
 
 int main(int argc, char *argv[])
@@ -73,7 +73,7 @@ int main(int argc, char *argv[])
     splash->showMessage(QObject::tr("Initializing camera ..."),
                            bottom, Qt::white);
 
-    Dialog w(0,camera);
+    MainWindow w(0,camera);
 
     w.show();
     splash->finish(&w);
